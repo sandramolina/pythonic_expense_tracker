@@ -3,8 +3,8 @@ class Merchant:
         self.name = name
         self.id = id
 
-def get_merchant_name(self):
-    return self.name
+    def get_merchant_name(self):
+        return self.name
 
-def get_merchant_id(self):
-    return self.id
+    def get_merchant_id(self):
+        return self.id

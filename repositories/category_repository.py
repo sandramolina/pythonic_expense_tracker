@@ -10,18 +10,25 @@ def save(category):
 
 def select_all():
     categories = []
+
     sql = "SELECT * FROM categories"
     results = run_sql(sql)
+
     for result in results:
         category = Category(result["name"], result["id"])
         categories.append(category)
     return categories
 
 def select(id):
+    category = None
+
     sql = "SELECT * FROM categories WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
-    category = Category(result["name"], result["id"])
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        category = Category(result["name"], result["id"])
     return category
 
 def delete(id):

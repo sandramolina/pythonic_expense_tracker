@@ -10,8 +10,10 @@ def save(merchant):
 
 def select_all():
     merchants = []
+
     sql = "SELECT * FROM merchants"
     results = run_sql(sql)
+    
     for result in results:
         merchant = Merchant(result["name"], result["id"])
         merchants.append(merchant)

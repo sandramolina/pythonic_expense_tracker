@@ -18,11 +18,27 @@ def save(expense):
 
 def select_all():
     expenses = []
+
     sql = "SELECT * FROM expenses"
     results = run_sql(sql)
+
     for result in results:
         merchant = merchant_repository.select(result['merchant_id'])
         category = category_repository.select(result['category_id'])
         expense = Expense(result['date'], merchant, category, result['amount'], result['description'], result['id'])
         expenses.append(expense)
     return expenses
+
+def select(id):
+    expense = None
+
+    sql = "SELECT * FROM expenses WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0] 
+        merchant = merchant_repository.select(result['merchant_id'])
+        category = category_repository.select(result['category_id'])
+        expense = Expense(result['date'], merchant, category, result['amount'], result['description'], result['id'])
+    return expense 

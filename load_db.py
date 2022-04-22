@@ -43,4 +43,6 @@ import repositories.expense_repository as expense_repository
 #test select all 
 #print(expense_repository.select_all()[0].__dict__)
 
-print(expense_repository.select(1).__dict__)
+#print(expense_repository.select(1).__dict__)
+
+#expense_repository.delete_all()

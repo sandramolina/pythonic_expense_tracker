@@ -41,4 +41,13 @@ def select(id):
         merchant = merchant_repository.select(result['merchant_id'])
         category = category_repository.select(result['category_id'])
         expense = Expense(result['date'], merchant, category, result['amount'], result['description'], result['id'])
-    return expense 
+    return expense
+
+def delete(id):
+    sql = "DELETE FROM expenses WHERE id = %s"
+    values = [id]
+    run_sql(sql,values)
+
+def delete_all():
+    sql = "DELETE FROM expenses"
+    run_sql(sql)

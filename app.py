@@ -1,9 +1,11 @@
 from flask import Flask, render_template
 from controllers.categories_controllers import categories_bp
+from controllers.merchants_controllers import merchants_bp
 
 app = Flask(__name__)
 
 app.register_blueprint(categories_bp)
+app.register_blueprint(merchants_bp)
 
 @app.route("/")
 def main():

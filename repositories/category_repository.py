@@ -28,3 +28,8 @@ def delete(id):
     sql = "DELETE FROM categories WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(category):
+    sql = "UPDATE categories SET name = %s WHERE id = %s"
+    values = [category.name, category.id]
+    run_sql(sql, values)

@@ -18,10 +18,15 @@ def select_all():
     return merchants
 
 def select(id):
+    merchant = None
+
     sql = "SELECT * FROM merchants WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
-    merchant = Merchant(result["name"], result["id"])
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        merchant = Merchant(result["name"], result["id"])
     return merchant
 
 def delete(id):

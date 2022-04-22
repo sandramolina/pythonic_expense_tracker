@@ -1,15 +1,13 @@
+from unicodedata import category
 from db.run_sql import run_sql
 
-# from models.category import Category
-# from models.merchant import Merchant
-# from models.expense import Expense
+from models.expense import Expense
 
-# def save(biting):
-#     sql = "INSERT INTO expenses (human_id, zombie_id) VALUES (%s, %s) RETURNING id"
-#     values = [biting.human.id, biting.zombie.id]
-#     results = run_sql(sql, values)
-#     id = results[0]['id']
-#     biting.id = id
+from models.category import Category
+from models.merchant import Merchant
+
+import repositories.category_repository as category_repository
+import repositories.merchant_repository as merchant_repository
 
 def save(expense):
     sql = "INSERT INTO expenses (date, merchant_id, category_id, amount, description) VALUES (%s, %s, %s, %s, %s) RETURNING id"
@@ -18,3 +16,13 @@ def save(expense):
     id = results[0]['id']
     expense.id = id
 
+def select_all():
+    expenses = []
+    sql = "SELECT * FROM expenses"
+    results = run_sql(sql)
+    for result in results:
+        merchant = merchant_repository.select(result['merchant_id'])
+        category = category_repository.select(result['category_id'])
+        expense = Expense(result['date'], merchant, category, result['amount'], result['description'], result['id'])
+        expenses.append(expense)
+    return expenses

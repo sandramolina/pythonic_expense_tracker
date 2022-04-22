@@ -39,3 +39,6 @@ import repositories.expense_repository as expense_repository
 #Testing save function
 # expense1 = Expense("2022-04-25", merchant2, category1, 120, "Dinner with Khal Drogo")
 #expense_repository.save(expense1)
+
+#test select all 
+#print(expense_repository.select_all()[0].__dict__)

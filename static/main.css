@@ -1,13 +1,26 @@
 body {
     margin: 0%;
 }
-a {
+/* a {
     text-decoration: none;
-}
-li {
+} */
+.nav-links {
     list-style: none;
 }
 
-/* .logo {
+.logo {
+    float: left;
+    /* height:300px; */
+    width: 30%;
+}
+
+img {
+    height: 100%;
     width: 100%;
-} */
+    object-fit: contain;
+   }
+
+.menu {
+    float: right;
+    
+}

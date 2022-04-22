@@ -4,6 +4,9 @@ import repositories.category_repository as category_repository
 from models.merchant import Merchant
 import repositories.merchant_repository as merchant_repository
 
+from models.expense import Expense
+import repositories.expense_repository as expense_repository
+
 #Testing save function
 # category1 = Category("Groceries")
 # category_repository.save(category1)
@@ -32,3 +35,7 @@ import repositories.merchant_repository as merchant_repository
 
 #test delete
 #merchant_repository.delete(2)
+
+#Testing save function
+# expense1 = Expense("2022-04-25", merchant2, category1, 120, "Dinner with Khal Drogo")
+#expense_repository.save(expense1)

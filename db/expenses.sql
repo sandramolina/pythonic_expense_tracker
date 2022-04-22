@@ -15,8 +15,8 @@ CREATE TABLE categories (
 CREATE TABLE expenses (
     id SERIAL PRIMARY KEY,
     date VARCHAR(255),
-    -- merchant_id SERIAL REFERENCES merchants(id),
-    -- category_id SERIAL REFERENCES categories(id),
+    merchant_id SERIAL REFERENCES merchants(id),
+    category_id SERIAL REFERENCES categories(id),
     amount VARCHAR(255),
     description VARCHAR(255)
 );

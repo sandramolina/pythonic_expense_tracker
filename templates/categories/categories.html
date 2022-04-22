@@ -7,10 +7,10 @@
 
 <section>
     <p>{{ category.name }}</p>
-    <!-- <a href="/category/{{ category.id }}/edit"></a>
+    <!-- <a href="/category/{{ category.id }}/edit"></a> -->
     <form action="/categories/{{ category.id }}/delete" method="POST">
         <input type="submit" value="Delete">
-    </form> -->
+    </form>
 </section>
 {% endfor %}
 <p><a href="categories/new">Add new category</a></p>

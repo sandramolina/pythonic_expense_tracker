@@ -1,5 +1,4 @@
 import unittest
-import datetime
 
 from models.expense import *
 from models.category import *

@@ -26,3 +26,9 @@ import repositories.merchant_repository as merchant_repository
 
 # merchant2 = Merchant("The Pony Inn")
 # merchant_repository.save(merchant2)
+
+#test select all 
+#print(merchant_repository.select_all())
+
+#test delete
+#merchant_repository.delete(2)

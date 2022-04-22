@@ -51,3 +51,8 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM expenses"
     run_sql(sql)
+
+def update(expense):
+    sql = "UPDATE expenses SET (date, merchant_id, category_id, amount, description) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [expense.get_expense_date(), expense.merchant.get_merchant_id(), expense.category.get_category_id(), expense.get_expense_amount(), expense.get_expense_description()]
+    run_sql(sql, values)

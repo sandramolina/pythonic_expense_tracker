@@ -1,6 +1,9 @@
 from models.category import *
 import repositories.category_repository as category_repository
 
+from models.merchant import Merchant
+import repositories.merchant_repository as merchant_repository
+
 #Testing save function
 # category1 = Category("Groceries")
 # category_repository.save(category1)
@@ -16,3 +19,10 @@ import repositories.category_repository as category_repository
 
 #test delete
 #category_repository.delete(2)
+
+#Testing save function
+# merchant1 = Merchant("Tesco")
+# merchant_repository.save(merchant1)
+
+# merchant2 = Merchant("The Pony Inn")
+# merchant_repository.save(merchant2)

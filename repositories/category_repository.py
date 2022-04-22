@@ -17,3 +17,10 @@ def select_all():
         category = Category(result["name"], result["id"])
         categories.append(category)
     return categories
+
+def select(id):
+    sql = "SELECT * FROM categories WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    category = Category(result["name"], result["id"])
+    return category

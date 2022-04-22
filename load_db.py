@@ -10,3 +10,6 @@ import repositories.category_repository as category_repository
 
 #test select all 
 #print(category_repository.select_all()[1].__dict__)
+
+#test select
+#print(category_repository.select(2).__dict__)

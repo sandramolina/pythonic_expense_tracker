@@ -26,3 +26,15 @@ def create_category():
 def delete_category(id):
     category_repository.delete(id)
     return redirect('/categories')
+
+@categories_bp.route('/categories/<id>/edit')
+def edit_category(id):
+    category = category_repository.select(id)
+    return render_template('/categories/edit.html', category = category, name = category.get_category_name())
+
+@categories_bp.route('/categories/<id>', methods = ['POST'])
+def update_category(id):
+    name = request.form['name']
+    category = Category(name, id)
+    category_repository.update(category)
+    return redirect('/categories')

@@ -24,3 +24,8 @@ def select(id):
     result = run_sql(sql, values)[0]
     category = Category(result["name"], result["id"])
     return category
+
+def delete(id):
+    sql = "DELETE FROM categories WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

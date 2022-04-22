@@ -13,3 +13,6 @@ import repositories.category_repository as category_repository
 
 #test select
 #print(category_repository.select(2).__dict__)
+
+#test delete
+#category_repository.delete(2)

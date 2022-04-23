@@ -39,7 +39,6 @@ def create_expense():
 @expenses_bp.route('/<id>/edit')
 def render_edit_page(id):
     expense = expense_repository.select(id)
-    #all_expenses = expense_repository.select_all()
 
     all_merchants = merchant_repository.select_all()
     all_categories = category_repository.select_all()

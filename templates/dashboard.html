@@ -6,8 +6,8 @@
 <h3>Filter by Merchant</h3>
 <form>
     <select>
-        {% for expense in expenses %}
-        <option value="merchant_id">{{ expense.merchant.get_merchant_name() }}</option>
+        {% for merchant in merchants %}
+        <option value="{{ merchant.get_merchant_id() }}">{{ merchant.get_merchant_name() }}</option>
         {% endfor %}
     </select>    
 </form>

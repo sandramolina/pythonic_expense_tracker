@@ -63,7 +63,7 @@ def get_total_expenses():
     
     return total_expenses
 
-def filter_expenses(merchant):
+def filter_expenses_merchant(merchant):
     expenses = []
 
     sql = "SELECT expenses.* FROM expenses INNER JOIN merchants ON expenses.merchant_id = merchants.id WHERE merchant_id = %s"

@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.expense import Expense
@@ -11,8 +12,9 @@ expenses_bp = Blueprint("expenses", __name__)
 @expenses_bp.route('/dashboard')
 def expenses():
     expenses = expense_repository.select_all()
-    total_expenses = expense_repository.get_total_expenses()
-    return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses)
+    merchants = merchant_repository.select_all()
+    total_expenses = expense_repository.get_total_expenses()    
+    return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses, merchants = merchants)
 
 @expenses_bp.route('/')
 def new_expense():
@@ -67,3 +69,9 @@ def update_expense(id):
 def delete_expense(id):
     expense_repository.delete(id)
     return redirect('/dashboard')
+
+@expenses_bp.route('/<id>/filter', methods = ['POST'])
+def filter_by_merchant(id):
+    merchant = merchant_repository.select(id)
+    expenses = expense_repository.filter_expenses_merchant(merchant)
+    return render_template('dashboard.html', expenses = expenses)

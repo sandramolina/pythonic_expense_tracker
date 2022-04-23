@@ -12,7 +12,8 @@ expenses_bp = Blueprint("expenses", __name__)
 @expenses_bp.route('/dashboard')
 def expenses():
     expenses = expense_repository.select_all()
-    return render_template('dashboard.html', expenses = expenses)
+    total_expenses = expense_repository.get_total_expenses()
+    return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses)
 
 @expenses_bp.route('/')
 def new_expense():

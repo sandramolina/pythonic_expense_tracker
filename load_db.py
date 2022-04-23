@@ -48,4 +48,4 @@ import repositories.expense_repository as expense_repository
 #expense_repository.delete_all()
 
 #test get_total_expenses():
-print(expense_repository.get_total_expenses())
+#print(expense_repository.get_total_expenses())

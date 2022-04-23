@@ -21,6 +21,15 @@
         </select>
     </div>
 
+    <div>
+        <label for="category">Category:</label>
+        <select id="category" name="category_id">
+            {% for category in all_categories %}
+                <option value="{{ category.id }}">{{ category.get_category_name() }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
     <input type="submit" value="Add Expense">
 </form>
 

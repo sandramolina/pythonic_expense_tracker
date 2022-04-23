@@ -18,7 +18,8 @@ def expenses():
 @expenses_bp.route('/')
 def new_expense():
     merchants = merchant_repository.select_all()
-    return render_template('index.html', all_merchants = merchants)
+    categories = category_repository.select_all()
+    return render_template('index.html', all_merchants = merchants, all_categories = categories)
 
 
 

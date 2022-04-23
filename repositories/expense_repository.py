@@ -1,10 +1,6 @@
-from unicodedata import category
 from db.run_sql import run_sql
 
 from models.expense import Expense
-
-from models.category import Category
-from models.merchant import Merchant
 
 import repositories.category_repository as category_repository
 import repositories.merchant_repository as merchant_repository

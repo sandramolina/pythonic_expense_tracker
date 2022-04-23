@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.expense import Expense
@@ -60,4 +61,9 @@ def update_expense(id):
     expense_to_update = Expense(date, merchant_object, category_object, amount, description, id)
     expense_repository.update(expense_to_update)
 
+    return redirect('/dashboard')
+
+@expenses_bp.route('/<id>/delete', methods = ['POST'])
+def delete_expense(id):
+    expense_repository.delete(id)
     return redirect('/dashboard')

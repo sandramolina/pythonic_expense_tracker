@@ -19,6 +19,9 @@
     <p>Category: {{ expense.category.get_category_name() }}</p>
     <p>Amount: {{ expense.get_expense_amount() }}</p>
     <a href="/{{ expense.id }}/edit">Edit</a>
+    <form action="/{{ expense.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
 </section>
 <hr>
 

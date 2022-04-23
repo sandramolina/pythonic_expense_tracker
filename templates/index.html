@@ -1,4 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-Home
+
+<h2>Register a new Transaction</h2>
+
+<form action="/" method="POST">
+    <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description">
+    </div>
+    <div>
+        <label for="merchant">Merchant:</label>
+        <select id="merchant" name="merchant_id">
+            {% for merchant in all_merchants %}
+                <option value="{{ merchant.id }}">{{ merchant.get_merchant_name() }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <input type="submit" value="Add Expense">
+</form>
+
 {% endblock %}
+
+

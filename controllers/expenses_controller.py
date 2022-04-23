@@ -13,8 +13,9 @@ expenses_bp = Blueprint("expenses", __name__)
 def expenses():
     expenses = expense_repository.select_all()
     merchants = merchant_repository.select_all()
-    total_expenses = expense_repository.get_total_expenses()    
-    return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses, merchants = merchants)
+    total_expenses = expense_repository.get_total_expenses()  
+    categories = category_repository.select_all()  
+    return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses, merchants = merchants, categories = categories)
 
 @expenses_bp.route('/')
 def new_expense():
@@ -78,3 +79,13 @@ def filter_by_merchant():
     merchants = merchant_repository.select_all()
     total_expenses = expense_repository.get_total_expenses()
     return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = total_expenses)
+
+@expenses_bp.route('/filter_category', methods = ['POST'])
+def filter_by_category():
+    id = request.form["category_id"]
+    category = category_repository.select(id)
+    expenses = expense_repository.filter_expenses_category(category)
+    merchants = merchant_repository.select_all()
+    categories = category_repository.select_all()
+    total_expenses = expense_repository.get_total_expenses()
+    return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = total_expenses, categories = categories)

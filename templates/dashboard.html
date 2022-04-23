@@ -11,7 +11,16 @@
     <select name="merchant_id">
         {% for merchant in merchants %}
         <option value ="{{ merchant.get_merchant_id() }}">{{ merchant.get_merchant_name() }}</option>
-        {% set merchant_id = merchant.get_merchant_id() %}
+        {% endfor %}
+    </select>
+    <input type="submit" value="Filter">
+</form>
+
+<h3>Filter by Category</h3>
+<form action="/filter_category" method="POST">
+    <select name="category_id">
+        {% for category in categories %}
+        <option value ="{{ category.id }}">{{ category.name }}</option>
         {% endfor %}
     </select>
     <input type="submit" value="Filter">

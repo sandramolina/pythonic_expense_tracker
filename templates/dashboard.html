@@ -18,7 +18,10 @@
     <p>Merchant: {{ expense.merchant.get_merchant_name() }}</p>
     <p>Category: {{ expense.category.get_category_name() }}</p>
     <p>Amount: {{ expense.get_expense_amount() }}</p>
+    <a href="/{{ expense.id }}/edit">Edit</a>
 </section>
+<hr>
+
 {% endfor %}
 <p><a href="/">Register a new Expense</a></p>
 {% endblock %}

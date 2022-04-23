@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.expense import Expense
@@ -36,6 +35,16 @@ def create_expense():
     expense_repository.save(new_expense)
 
     return redirect('/dashboard')
+
+@expenses_bp.route('/<id>/edit')
+def render_edit_page(id):
+    expense = expense_repository.select(id)
+    #all_expenses = expense_repository.select_all()
+
+    all_merchants = merchant_repository.select_all()
+    all_categories = category_repository.select_all()
+
+    return render_template('/edit_transaction.html', expense = expense, merchants = all_merchants, categories = all_categories)
 
 
 

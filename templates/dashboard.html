@@ -3,17 +3,19 @@
 
 <h2>Expenses Dashboard</h2>
 
-<h3>Filter by Merchant</h3>
-<form>
-    <select>
-        {% for merchant in merchants %}
-        <option value="{{ merchant.get_merchant_id() }}">{{ merchant.get_merchant_name() }}</option>
-        {% endfor %}
-    </select>    
-</form>
-
 <h3>Total Expenses</h3>
 <p>{{ total_expenses }}</p>
+
+<h3>Filter by Merchant</h3>
+<form action="/filter_merchant" method="POST">
+    <select name="merchant_id">
+        {% for merchant in merchants %}
+        <option value ="{{ merchant.get_merchant_id() }}">{{ merchant.get_merchant_name() }}</option>
+        {% set merchant_id = merchant.get_merchant_id() %}
+        {% endfor %}
+    </select>
+    <input type="submit" value="Filter">
+</form>
 
 <h3>Detailed Expenses</h3>
 {% for expense in expenses %}

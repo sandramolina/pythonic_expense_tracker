@@ -63,3 +63,27 @@ def get_total_expenses():
     
     return total_expenses
 
+def filter_expenses(merchant):
+    expenses = []
+
+    sql = "SELECT expenses.* FROM expenses INNER JOIN merchants ON expenses.merchant_id = merchants.id WHERE merchant_id = %s"
+
+    values= [merchant.id]
+    results = run_sql(sql, values)
+
+    for result in results:
+        category_id = result['category_id']
+        category = category_repository.select(category_id)
+        expense = Expense(result['date'], merchant, category, result['amount'], result['description'], result['id'])
+        expenses.append(expense)
+    
+    return expenses
+
+# SELECT exp.date, exp.description, exp.amount, mer.name as merchant, cat.name as category
+# FROM expenses as exp
+# INNER JOIN categories as cat
+# ON cat.id = exp.category_id
+# INNER JOIN merchants as mer
+# ON mer.id = exp.merchant_id
+# WHERE merchant_id = 2
+

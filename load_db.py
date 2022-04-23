@@ -78,3 +78,8 @@ expense_repository.save(expense3)
 
 #test get_total_expenses():
 #print(expense_repository.get_total_expenses())
+
+#test filter_expenses by merchant
+# test = expense_repository.filter_expenses(merchant2)
+# print(test[0].__dict__)
+# print(test[1].__dict__)

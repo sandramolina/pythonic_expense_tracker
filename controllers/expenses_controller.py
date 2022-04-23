@@ -45,7 +45,19 @@ def render_edit_page(id):
 
     return render_template('/edit_transaction.html', expense = expense, merchants = all_merchants, categories = all_categories)
 
+@expenses_bp.route('/<id>', methods=["POST"])
+def update_expense(id):
+    date = request.form['date']
+    description = request.form['description']
+    amount = request.form['amount']
 
+    merchant_id = request.form['merchant_id']
+    category_id = request.form['category_id']
 
+    merchant_object = merchant_repository.select(merchant_id)
+    category_object = category_repository.select(category_id)
 
+    expense_to_update = Expense(date, merchant_object, category_object, amount, description, id)
+    expense_repository.update(expense_to_update)
 
+    return redirect('/dashboard')

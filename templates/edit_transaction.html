@@ -3,7 +3,7 @@
 
 <h2>Update {{expense.description}}</h2>
 
-<form action="/" method="POST">
+<form action="/{{ expense.id }}" method="POST">
     <div>
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" value="{{ expense.date }}">

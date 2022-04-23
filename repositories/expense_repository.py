@@ -79,6 +79,22 @@ def filter_expenses_merchant(merchant):
     
     return expenses
 
+def filter_expenses_category(category):
+    expenses = []
+
+    sql = "SELECT expenses.* FROM expenses INNER JOIN categories ON expenses.category_id = categories.id WHERE category_id = %s"
+
+    values= [category.id]
+    results = run_sql(sql, values)
+
+    for result in results:
+        merchant_id = result['merchant_id']
+        merchant = merchant_repository.select(merchant_id)
+        expense = Expense(result['date'], merchant, category, result['amount'], result['description'], result['id'])
+        expenses.append(expense)
+    
+    return expenses
+
 # SELECT exp.date, exp.description, exp.amount, mer.name as merchant, cat.name as category
 # FROM expenses as exp
 # INNER JOIN categories as cat
@@ -86,4 +102,3 @@ def filter_expenses_merchant(merchant):
 # INNER JOIN merchants as mer
 # ON mer.id = exp.merchant_id
 # WHERE merchant_id = 2
-

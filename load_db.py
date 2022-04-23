@@ -67,7 +67,7 @@ expense5 = Expense("2021-02-28", merchant2, category3, 20000, "Present for John 
 expense_repository.save(expense5)
 
 expense6 = Expense("2021-02-25", merchant4, category5, 100, "1 bottle of Tears of Lys")
-expense_repository.save(expense3)
+expense_repository.save(expense6)
 
 #test select all 
 #print(expense_repository.select_all()[0].__dict__)

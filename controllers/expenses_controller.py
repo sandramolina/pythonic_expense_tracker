@@ -11,9 +11,15 @@ import repositories.expense_repository as expense_repository
 expenses_bp = Blueprint("expenses", __name__)
 
 @expenses_bp.route('/dashboard')
-def index_expenses():
+def expenses():
     expenses = expense_repository.select_all()
     return render_template('dashboard.html', expenses = expenses)
+
+@expenses_bp.route('/')
+def new_expense():
+    return render_template('index.html')
+
+
 
 
 

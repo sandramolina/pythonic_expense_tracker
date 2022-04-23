@@ -52,3 +52,14 @@ def update(expense):
     sql = "UPDATE expenses SET (date, merchant_id, category_id, amount, description) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [expense.get_expense_date(), expense.merchant.get_merchant_id(), expense.category.get_category_id(), expense.get_expense_amount(), expense.get_expense_description(), expense.id]
     run_sql(sql, values)
+
+def get_total_expenses():
+    sql = "SELECT * FROM expenses"
+    all_expenses = run_sql(sql)
+    total_expenses = 0
+
+    for expense in all_expenses:
+        total_expenses += int(expense['amount'])
+    
+    return total_expenses
+

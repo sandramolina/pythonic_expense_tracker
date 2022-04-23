@@ -1,8 +1,6 @@
 from crypt import methods
 from flask import Blueprint, Flask, redirect, render_template, request
 
-from models.merchant import Merchant
-from models.category import Category
 from models.expense import Expense
 
 import repositories.merchant_repository as merchant_repository

@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Expenses</h2>
+<h2>Expenses Dashboard</h2>
 
+<h3>Total Expenses (PENDING)</h3>
+{% for expense in expenses %}
+    {{ expense.get_expense_amount() }}
+
+{% endfor %}
+
+<h3>Detailed Expenses</h3>
 {% for expense in expenses %}
 
 <section>

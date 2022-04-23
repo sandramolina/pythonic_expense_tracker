@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Expenses</h2>
+
+{% for expense in expenses %}
+
+<section>
+    <p>Transaction date: {{ expense.get_expense_date() }}</p>
+    <p>{{ expense.get_expense_description() }}</p>
+    <p>Merchant: {{ expense.merchant.get_merchant_name() }}</p>
+    <p>Category: {{ expense.category.get_category_name() }}</p>
+    <p>Amount: {{ expense.get_expense_amount() }}</p>
+</section>
+{% endfor %}
+<p><a href="/">Register a new Expense</a></p>
+{% endblock %}

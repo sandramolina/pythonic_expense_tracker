@@ -14,7 +14,7 @@ def expenses():
     merchants = merchant_repository.select_all()
     total_expenses = expense_repository.get_total_expenses()  
     categories = category_repository.select_all()  
-    return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses, merchants = merchants, categories = categories)
+    return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses, merchants = merchants, categories = categories, subtotal_expenses_merchant = 0)
 
 @expenses_bp.route('/')
 def new_expense():
@@ -80,7 +80,9 @@ def filter_by_merchant():
     categories = category_repository.select_all()
 
     total_expenses = expense_repository.get_total_expenses()
-    return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = total_expenses, categories = categories)
+    subtotal_expenses = expense_repository.get_subtotal_expenses_by_merchant(merchant)
+
+    return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = total_expenses, categories = categories, subtotal_expenses_merchant = subtotal_expenses)
 
 @expenses_bp.route('/filter_category', methods = ['POST'])
 def filter_by_category():

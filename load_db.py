@@ -26,16 +26,16 @@ import repositories.budget_repository as budget_repository
 # category5 = Category("Vengeance")
 # category_repository.save(category5)
 
-# test select all 
-# print(category_repository.select_all()[1].__dict__)
+# # test select all 
+# # print(category_repository.select_all()[1].__dict__)
 
-# test select
-# print(category_repository.select(2).__dict__)
+# # test select
+# # print(category_repository.select(2).__dict__)
 
-# test delete
-# category_repository.delete(2)
+# # test delete
+# # category_repository.delete(2)
 
-# Testing save function
+# # Testing save function
 # merchant1 = Merchant("The Spice King")
 # merchant_repository.save(merchant1)
 
@@ -47,13 +47,14 @@ import repositories.budget_repository as budget_repository
 
 # merchant4 = Merchant("Kraznys mo Nakloz")
 # merchant_repository.save(merchant4)
-# test select all 
-# print(merchant_repository.select_all())
 
-# test delete
-# merchant_repository.delete(2)
+# # test select all 
+# # print(merchant_repository.select_all())
 
-# Testing save function
+# # test delete
+# # merchant_repository.delete(2)
+
+# # Testing save function
 # expense1 = Expense("2022-04-25", merchant1, category1, 120, "Dinner with Khal Drogo")
 # expense_repository.save(expense1)
 
@@ -96,10 +97,12 @@ import repositories.budget_repository as budget_repository
 # budget = Budget(10000, "Yearly")
 # budget_repository.save(budget)
 
-# budget.budget_status(8000)
-
 #print(budget_repository.select_all()[0].__dict__)
-#print(budget_repository.select(1).__dict__)
+#print(budget_repository.select(2).__dict__)
 
-# budget2 = Budget(10000, "Monthly")
+# budget2 = Budget(5000, "Monthly")
 # budget_repository.save(budget2)
+
+budget_repository.delete(3)
+# budget.periodicity = "daily"
+# budget_repository.update(budget)

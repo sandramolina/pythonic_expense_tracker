@@ -4,22 +4,21 @@ from models.budget import Budget
 import repositories.expense_repository as expense_repository
 
 def save(budget):
-    sql = "INSERT INTO budgets (total_budget, periodicity, budget_status) VALUES (%s, %s, %s) RETURNING id"
-    total_expenses = expense_repository.get_total_expenses()
-    values = [budget.get_total_budget(), budget.get_budget_periodicity(), budget.get_budget_status(total_expenses)]
+    sql = "INSERT INTO budgets (total_budget, periodicity) VALUES (%s, %s) RETURNING id"
+    
+    values = [budget.get_total_budget(), budget.get_budget_periodicity()]
     results = run_sql(sql, values)
     id = results[0]['id']
     budget.id = id
 
 def select_all():
     budgets = []
-    total_expenses = expense_repository.get_total_expenses()
-
+    
     sql = "SELECT * FROM budgets"
     results = run_sql(sql)
 
     for result in results:
-        budget = Budget(result["total_budget"], result["periodicity"], result["budget_status"], result["id"])
+        budget = Budget(result["total_budget"], result["periodicity"], result["id"])
         budgets.append(budget)
     return budgets
 
@@ -32,7 +31,7 @@ def select(id):
 
     if results:
         result = results[0]
-        budget = Budget(result["total_budget"], result["id"])
+        budget = Budget(result["total_budget"], result["periodicity"], result["id"])
     return budget
 
 def delete(id):
@@ -41,6 +40,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(budget):
-    sql = "UPDATE budgets SET total_budget = %s WHERE id = %s"
-    values = [budget.total_budget, budget.id]
+    sql = "UPDATE budgets SET (total_budget, periodicity) = (%s, %s) WHERE id = %s"
+    values = [budget.total_budget, budget.periodicity, budget.id]
     run_sql(sql, values)

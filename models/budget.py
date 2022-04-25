@@ -1,8 +1,8 @@
 class Budget:
-    def __init__(self, total_budget, periodicity, budget_status = None, id = None):
+    def __init__(self, total_budget, periodicity, balance = None, id = None):
         self.total_budget = total_budget
         self.periodicity = periodicity
-        self.budget_status = budget_status
+        self.balance = balance
         self.id = id
 
     def get_total_budget(self):
@@ -14,16 +14,16 @@ class Budget:
     def get_budget_id(self):
         return self.id
     
-    def get_budget_status(self, total_expenses):
-        budget_status = self.total_budget - total_expenses
-        return budget_status
+    def get_balance(self, total_expenses):
+        balance = self.total_budget - total_expenses
+        return balance
     
-    def budget_alert(self, budget_status):
-        if budget_status > 10:
-            return f'Your budget is {budget_status}'
-        elif budget_status < 10 and budget_status > 0:
-            return f'Your budget is {budget_status} and you are running out of money'
-        elif budget_status == 0:
-            return f'Your budget is {budget_status}, you have run out of money'
+    def budget_alert(self, balance):
+        if balance > 10:
+            return f'Your budget is {balance}'
+        elif balance < 10 and balance > 0:
+            return f'Your budget is {balance} and you are running out of money'
+        elif balance == 0:
+            return f'Your budget is {balance}, you have run out of money'
         else:
-            return f'Your budget is {budget_status}, you are overspending'
+            return f'Your budget is {balance}, you are overspending'

@@ -26,5 +26,5 @@ CREATE TABLE budgets (
     id SERIAL PRIMARY KEY,
     total_budget INT,
     periodicity VARCHAR(255),
-    remaining_budget INT
+    budget_status INT
 );

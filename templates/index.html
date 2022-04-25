@@ -41,14 +41,14 @@
 </form>
 
 <h2>Add some budget</h2>
-<form>
+<form action="/budget_mgmt" method="POST">
     <div>
         <label for="total_budget">Budget to add:</label>
         <input type="number" id="total_budget" name="total_budget" min=0>
     </div>
     <div>
         <label for="periodicity">Periodicity:</label>
-        <select>
+        <select name="periodicity">
             <option value="yearly">Yearly</option>
             <option value="monthly">Monthly</option>
             <option value="weekly">Weekly</option>

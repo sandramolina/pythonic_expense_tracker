@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS expenses;
 DROP TABLE IF EXISTS merchants;
 DROP TABLE IF EXISTS categories;
+DROM TABLE IF EXISTS budgets;
 
 CREATE TABLE merchants (
     id SERIAL PRIMARY KEY,
@@ -19,4 +20,11 @@ CREATE TABLE expenses (
     category_id INT REFERENCES categories(id),
     amount VARCHAR(255),
     description VARCHAR(255)
+);
+
+CREATE TABLE budgets (
+    id SERIAL PRIMARY KEY,
+    total_budget INT,
+    periodicity VARCHAR(255),
+    remaining_budget INT
 );

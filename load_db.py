@@ -86,3 +86,6 @@ expense_repository.save(expense6)
 
 # test = expense_repository.get_subtotal_expenses_by_merchant(merchant4)
 # print(test)
+
+# test = expense_repository.get_subtotal_expenses_by_category(category5)
+# print(test)

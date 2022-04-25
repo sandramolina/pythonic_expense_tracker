@@ -107,3 +107,16 @@ def get_subtotal_expenses_by_merchant(merchant):
         subtotal_expenses_by_merchant += int(expense['amount'])
     
     return subtotal_expenses_by_merchant
+
+def get_subtotal_expenses_by_category(category):
+    subtotal_expenses_by_category = 0
+
+    sql = "SELECT expenses.* FROM expenses INNER JOIN categories ON expenses.category_id = categories.id WHERE category_id = %s"
+
+    values= [category.id]
+    expenses_by_category = run_sql(sql, values)
+
+    for expense in expenses_by_category:
+        subtotal_expenses_by_category += int(expense['amount'])
+    
+    return subtotal_expenses_by_category

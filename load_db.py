@@ -97,3 +97,9 @@ import repositories.budget_repository as budget_repository
 # budget_repository.save(budget)
 
 # budget.budget_status(8000)
+
+#print(budget_repository.select_all()[0].__dict__)
+#print(budget_repository.select(1).__dict__)
+
+# budget2 = Budget(10000, "Monthly")
+# budget_repository.save(budget2)

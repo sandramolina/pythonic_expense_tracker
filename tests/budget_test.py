@@ -3,13 +3,13 @@ import unittest
 from models.budget import Budget
 
 class TestBudget(unittest.TestCase):
-    def setUp(self):
-        self.budget = Budget(10000, "Yearly")
+    def setUp(self):        
         self.total_expenses1 = 8000
         self.total_expenses2 = 9999
         self.total_expenses3 = 10000
         self.total_expenses4 = 11000
-    
+        self.budget1 = Budget(10000, "Yearly", self.total_expenses1)
+
     def test_get_budget(self):
         self.assertEqual(10000, self.budget.get_total_budget())
 

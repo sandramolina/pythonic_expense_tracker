@@ -1,7 +1,8 @@
 class Budget:
-    def __init__(self, total_budget, periodicity, id = None):
+    def __init__(self, total_budget, periodicity, budget_status = None, id = None):
         self.total_budget = total_budget
         self.periodicity = periodicity
+        self.budget_status = budget_status
         self.id = id
 
     def get_total_budget(self):
@@ -13,7 +14,7 @@ class Budget:
     def get_budget_id(self):
         return self.id
     
-    def budget_status(self, total_expenses):
+    def get_budget_status(self, total_expenses):
         budget_status = self.total_budget - total_expenses
         return budget_status
     

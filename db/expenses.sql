@@ -25,6 +25,5 @@ CREATE TABLE expenses (
 CREATE TABLE budgets (
     id SERIAL PRIMARY KEY,
     total_budget INT,
-    periodicity VARCHAR(255),
-    budget_status INT
+    periodicity VARCHAR(255)
 );

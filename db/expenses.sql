@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS expenses;
 DROP TABLE IF EXISTS merchants;
 DROP TABLE IF EXISTS categories;
-DROM TABLE IF EXISTS budgets;
+DROP TABLE IF EXISTS budgets;
 
 CREATE TABLE merchants (
     id SERIAL PRIMARY KEY,

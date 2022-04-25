@@ -95,10 +95,15 @@ def filter_expenses_category(category):
     
     return expenses
 
-# SELECT exp.date, exp.description, exp.amount, mer.name as merchant, cat.name as category
-# FROM expenses as exp
-# INNER JOIN categories as cat
-# ON cat.id = exp.category_id
-# INNER JOIN merchants as mer
-# ON mer.id = exp.merchant_id
-# WHERE merchant_id = 2
+def get_subtotal_expenses_by_merchant(merchant):
+    subtotal_expenses_by_merchant = 0
+
+    sql = "SELECT expenses.* FROM expenses INNER JOIN merchants ON expenses.merchant_id = merchants.id WHERE merchant_id = %s"
+
+    values= [merchant.id]
+    expenses_by_merchant = run_sql(sql, values)
+
+    for expense in expenses_by_merchant:
+        subtotal_expenses_by_merchant += int(expense['amount'])
+    
+    return subtotal_expenses_by_merchant

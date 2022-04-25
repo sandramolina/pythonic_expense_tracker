@@ -3,9 +3,6 @@
 
 <h2>Expenses Dashboard</h2>
 
-<h3>Total Expenses</h3>
-<p>{{ total_expenses }}</p>
-
 <h3>Filter by Merchant</h3>
 <form action="/filter_merchant" method="POST">
     <select name="merchant_id">
@@ -28,22 +25,43 @@
 </form>
 <p>Expenses filtered by Category: {{subtotal_expenses_category}}</p>
 
-<h3>Detailed Expenses</h3>
-{% for expense in expenses %}
-
-<section>
-    <p>Transaction date: {{ expense.get_expense_date() }}</p>
-    <p>{{ expense.get_expense_description() }}</p>
-    <p>Merchant: {{ expense.merchant.get_merchant_name() }}</p>
-    <p>Category: {{ expense.category.get_category_name() }}</p>
-    <p>Amount: {{ expense.get_expense_amount() }}</p>
-    <a href="/{{ expense.id }}/edit">Edit</a>
-    <form action="/{{ expense.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-</section>
-<hr>
-
-{% endfor %}
 <p><a href="/">Register a new Expense</a></p>
+<h3>Detailed Expenses</h3>
+
+<table class="table">
+
+    <tr class="table-headings">
+        <th class="table-cell">Date</th>
+        <th class="table-cell">Description</th>
+        <th class="table-cell">Merchant</th>
+        <th class="table-cell">Expense Category</th>
+        <th class="table-cell">Amount</th>
+    </tr>
+{% for expense in expenses %}
+    <tr class="table-row">
+        <td class="table-cell">{{ expense.get_expense_date() }}</td>
+        <td>{{ expense.get_expense_description() }}</td>
+        <td>{{ expense.merchant.get_merchant_name() }}</td>
+        <td>{{ expense.category.get_category_name() }}</td>
+        <td>{{ expense.get_expense_amount() }}</td>
+        <td>
+            <a href="/{{ expense.id }}/edit">Edit</a>
+        </td>
+        <td>
+            <form action="/{{ expense.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+{% endfor %}
+<tr class="table-headings">
+    <td>Total Expenses</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>{{ total_expenses }}</td>
+</tr>
+</table>
+
+
 {% endblock %}

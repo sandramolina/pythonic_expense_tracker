@@ -104,7 +104,7 @@ def filter_by_category():
     return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = total_expenses, categories = categories, subtotal_expenses_category = subtotal_expenses)
 
 @expenses_bp.route('/budget_mgmt', methods = ['POST'])
-def create_budget():
+def add_budget():
     total_budget = request.form['total_budget']
     periodicity = request.form['periodicity']
 

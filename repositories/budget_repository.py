@@ -57,3 +57,14 @@ def balance():
     balance = total_budget - total_expenses
 
     return balance
+
+balance = balance()
+def alert():
+    if balance > 10:
+        return f'Your budget is {balance}'
+    elif balance < 10 and balance > 0:
+        return f'Your budget is {balance} and you are running out of money'
+    elif balance == 0:
+        return f'Your budget is {balance}, you have run out of money'
+    else:
+        return f'Your budget is {balance}, you are overspending'

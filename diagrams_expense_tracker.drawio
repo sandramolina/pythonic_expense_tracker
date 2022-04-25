@@ -1,10 +1,10 @@
 <mxfile host="65bd71144e">
     <diagram id="-nJwM8MVXj22u1nWOoSV" name="classes">
-        <mxGraphModel dx="571" dy="359" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="418" dy="610" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="14" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="13">
+                <mxCell id="14" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="13" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="Expense" style="whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
@@ -35,13 +35,13 @@
                 <mxCell id="8" value="&lt;div&gt;&lt;span&gt;id : int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;name: str&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="506" y="376.5" width="140" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="Budget" style="whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+                <mxCell id="11" value="Budget" style="whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
                     <mxGeometry x="60" y="261" width="140" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="&lt;div&gt;&lt;span&gt;id : int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;total_budget: int&lt;/div&gt;&lt;div&gt;periodicity: str&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                <mxCell id="12" value="&lt;div&gt;&lt;span&gt;id : int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;total_budget: int&lt;/div&gt;&lt;div&gt;periodicity: str&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="60" y="301" width="140" height="56" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="&lt;div&gt;budget_status(): int&lt;/div&gt;&lt;div&gt;budget_alert(): str&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                <mxCell id="13" value="&lt;div&gt;budget_status(): int&lt;/div&gt;&lt;div&gt;budget_alert(): str&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="60" y="357" width="140" height="43" as="geometry"/>
                 </mxCell>
             </root>
@@ -90,7 +90,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="PatVSpBzCOoJRJCY-v3-" name="database">
-        <mxGraphModel dx="626" dy="394" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="418" dy="610" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="PZSBiwO2wmRF0Z8gL386-0"/>
                 <mxCell id="PZSBiwO2wmRF0Z8gL386-1" parent="PZSBiwO2wmRF0Z8gL386-0"/>
@@ -121,13 +121,13 @@
                 <mxCell id="EfaQaI-fbMbczIjDdGZK-9" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Database Tables&lt;/font&gt;&lt;/b&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" parent="PZSBiwO2wmRF0Z8gL386-1" vertex="1">
                     <mxGeometry x="218" y="153" width="166" height="21" as="geometry"/>
                 </mxCell>
-                <mxCell id="_Ejc1K2TufFADuH3jcwU-0" value="Budget" style="whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="PZSBiwO2wmRF0Z8gL386-1">
+                <mxCell id="_Ejc1K2TufFADuH3jcwU-0" value="Budget" style="whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="PZSBiwO2wmRF0Z8gL386-1" vertex="1">
                     <mxGeometry x="96" y="408" width="140" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="jP4VZbIihTc1S0nKJrVr-0" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="PZSBiwO2wmRF0Z8gL386-1" source="_Ejc1K2TufFADuH3jcwU-1" target="EfaQaI-fbMbczIjDdGZK-1">
+                <mxCell id="jP4VZbIihTc1S0nKJrVr-0" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="PZSBiwO2wmRF0Z8gL386-1" source="_Ejc1K2TufFADuH3jcwU-1" target="EfaQaI-fbMbczIjDdGZK-1" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="_Ejc1K2TufFADuH3jcwU-1" value="&lt;div&gt;&lt;span&gt;id : int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;total_budget: int&lt;/div&gt;&lt;div&gt;periodicity: str&lt;/div&gt;&lt;div&gt;remaining_budget&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="PZSBiwO2wmRF0Z8gL386-1">
+                <mxCell id="_Ejc1K2TufFADuH3jcwU-1" value="&lt;div&gt;&lt;span&gt;id : int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;total_budget: int&lt;/div&gt;&lt;div&gt;periodicity: str&lt;/div&gt;&lt;div&gt;remaining_budget&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="PZSBiwO2wmRF0Z8gL386-1" vertex="1">
                     <mxGeometry x="96" y="448" width="140" height="56" as="geometry"/>
                 </mxCell>
             </root>

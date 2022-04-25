@@ -44,7 +44,7 @@ def update(budget):
     values = [budget.total_budget, budget.periodicity, budget.id]
     run_sql(sql, values)
 
-def balance():    
+def alert():
     sql = "SELECT * FROM budgets"
     all_budgets = run_sql(sql)
 
@@ -54,12 +54,9 @@ def balance():
     
     balance = 0
     total_expenses = expense_repository.get_total_expenses()
+    
     balance = total_budget - total_expenses
 
-    return balance
-
-balance = balance()
-def alert():
     if balance > 10:
         return f'Your budget balance is {balance}'
     elif balance < 10 and balance > 0:

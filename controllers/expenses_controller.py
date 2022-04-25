@@ -1,10 +1,12 @@
 from flask import Blueprint, Flask, redirect, render_template, request
+from models.budget import Budget
 
 from models.expense import Expense
 
 import repositories.merchant_repository as merchant_repository
 import repositories.category_repository as category_repository
 import repositories.expense_repository as expense_repository
+import repositories.budget_repository as budget_repository
 
 expenses_bp = Blueprint("expenses", __name__)
 
@@ -13,14 +15,17 @@ def expenses():
     expenses = expense_repository.select_all()
     merchants = merchant_repository.select_all()
     total_expenses = expense_repository.get_total_expenses()  
-    categories = category_repository.select_all()  
+    categories = category_repository.select_all()
     return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses, merchants = merchants, categories = categories, subtotal_expenses_merchant = 0, subtotal_expenses_category = 0)
 
 @expenses_bp.route('/')
 def new_expense():
     merchants = merchant_repository.select_all()
     categories = category_repository.select_all()
-    return render_template('index.html', all_merchants = merchants, all_categories = categories)
+
+    balance_alert = budget_repository.alert()
+
+    return render_template('index.html', all_merchants = merchants, all_categories = categories, balance_alert = balance_alert)
 
 @expenses_bp.route('/', methods = ['POST'])
 def create_expense():
@@ -97,3 +102,13 @@ def filter_by_category():
     subtotal_expenses = expense_repository.get_subtotal_expenses_by_category(category)
 
     return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = total_expenses, categories = categories, subtotal_expenses_category = subtotal_expenses)
+
+@expenses_bp.route('/budget_mgmt', methods = ['POST'])
+def create_budget():
+    total_budget = request.form['total_budget']
+    periodicity = request.form['periodicity']
+
+    budget_object = Budget(total_budget, periodicity)
+    budget_repository.save(budget_object)
+
+    return redirect('/')

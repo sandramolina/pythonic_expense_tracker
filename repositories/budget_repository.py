@@ -43,3 +43,17 @@ def update(budget):
     sql = "UPDATE budgets SET (total_budget, periodicity) = (%s, %s) WHERE id = %s"
     values = [budget.total_budget, budget.periodicity, budget.id]
     run_sql(sql, values)
+
+def balance():    
+    sql = "SELECT * FROM budgets"
+    all_budgets = run_sql(sql)
+
+    total_budget = 0
+    for budget in all_budgets:
+        total_budget += int(budget['total_budget'])
+    
+    balance = 0
+    total_expenses = expense_repository.get_total_expenses()
+    balance = total_budget - total_expenses
+
+    return balance

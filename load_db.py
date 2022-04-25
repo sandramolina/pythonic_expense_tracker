@@ -100,9 +100,11 @@ import repositories.budget_repository as budget_repository
 #print(budget_repository.select_all()[0].__dict__)
 #print(budget_repository.select(2).__dict__)
 
-# budget2 = Budget(5000, "Monthly")
-# budget_repository.save(budget2)
+budget2 = Budget(5000, "Monthly")
+budget_repository.save(budget2)
 
-budget_repository.delete(3)
+#budget_repository.delete(3)
 # budget.periodicity = "daily"
 # budget_repository.update(budget)
+
+print(budget_repository.balance())

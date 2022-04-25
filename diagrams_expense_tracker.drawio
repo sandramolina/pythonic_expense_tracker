@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="-nJwM8MVXj22u1nWOoSV" name="classes">
-        <mxGraphModel dx="693" dy="436" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="571" dy="359" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -48,7 +48,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="G3Ryiu251RToIqHXAqj_" name="objects">
-        <mxGraphModel dx="524" dy="330" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="776" dy="488" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="ocHAUXSsoEOSeBS6Ft8I-0"/>
                 <mxCell id="ocHAUXSsoEOSeBS6Ft8I-1" parent="ocHAUXSsoEOSeBS6Ft8I-0"/>
@@ -90,7 +90,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="PatVSpBzCOoJRJCY-v3-" name="database">
-        <mxGraphModel dx="674" dy="553" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="626" dy="394" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="PZSBiwO2wmRF0Z8gL386-0"/>
                 <mxCell id="PZSBiwO2wmRF0Z8gL386-1" parent="PZSBiwO2wmRF0Z8gL386-0"/>
@@ -120,6 +120,15 @@
                 </mxCell>
                 <mxCell id="EfaQaI-fbMbczIjDdGZK-9" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Database Tables&lt;/font&gt;&lt;/b&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" parent="PZSBiwO2wmRF0Z8gL386-1" vertex="1">
                     <mxGeometry x="218" y="153" width="166" height="21" as="geometry"/>
+                </mxCell>
+                <mxCell id="_Ejc1K2TufFADuH3jcwU-0" value="Budget" style="whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="PZSBiwO2wmRF0Z8gL386-1">
+                    <mxGeometry x="96" y="408" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="jP4VZbIihTc1S0nKJrVr-0" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="PZSBiwO2wmRF0Z8gL386-1" source="_Ejc1K2TufFADuH3jcwU-1" target="EfaQaI-fbMbczIjDdGZK-1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="_Ejc1K2TufFADuH3jcwU-1" value="&lt;div&gt;&lt;span&gt;id : int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;total_budget: int&lt;/div&gt;&lt;div&gt;periodicity: str&lt;/div&gt;&lt;div&gt;remaining_budget&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="PZSBiwO2wmRF0Z8gL386-1">
+                    <mxGeometry x="96" y="448" width="140" height="56" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

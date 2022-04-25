@@ -40,6 +40,23 @@
     <input type="submit" value="Add Expense">
 </form>
 
+<h2>Add some budget</h2>
+<form>
+    <div>
+        <label for="total_budget">Budget to add:</label>
+        <input type="number" id="total_budget" name="total_budget" min=0>
+    </div>
+    <div>
+        <label for="periodicity">Periodicity:</label>
+        <select>
+            <option value="yearly">Yearly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+        </select>
+    </div>
+    <input type="submit" value="Add Budget">
+</form>
+
 {% endblock %}
 
 

@@ -25,4 +25,4 @@ class Budget:
         elif budget_status == 0:
             return f'Your budget is {budget_status}, you have run out of money'
         else:
-            return f'Your are overspending'
+            return f'Your budget is {budget_status}, you are overspending'

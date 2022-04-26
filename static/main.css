@@ -2,7 +2,6 @@ body {
     margin: 0%;
     background-color: #ffb997;
     font-family: 'Inter', sans-serif;
-    height: min-content;
 }
 
 .skip-to-content-link {
@@ -161,8 +160,16 @@ color: #ffb997;
 }
 
 .middle-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 33%;
 }
+.social {
+    padding: 1vw;
+}
+
 .right-footer {
     width: 33%;
 }

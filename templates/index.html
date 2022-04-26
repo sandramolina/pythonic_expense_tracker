@@ -2,71 +2,70 @@
 {% block content %}
 
 <h2 class="title center-in-page"> Welcome to the Pythonic Expense Tracker</h2>
+
 <div class="card-container">
+    <div class="card">
 
+        <h2 class="title" id="main">Register a new Transaction</h2>
+        <form action="/" method="POST">
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
 
-<div class="card">
+            <div>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+            </div>
 
-    <h2 class="title">Register a new Transaction</h2>
-    <form action="/" method="POST" id="main">
-        <div>
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-        </div>
+            <div>
+                <label for="merchant">Merchant:</label>
+                <select id="merchant" name="merchant_id">
+                    {% for merchant in all_merchants %}
+                        <option value="{{ merchant.id }}">{{ merchant.get_merchant_name() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <div>
-            <label for="description">Description:</label>
-            <input type="text" id="description" name="description" required>
-        </div>
+            <div>
+                <label for="category">Category:</label>
+                <select id="category" name="category_id">
+                    {% for category in all_categories %}
+                        <option value="{{ category.id }}">{{ category.get_category_name() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <div>
-            <label for="merchant">Merchant:</label>
-            <select id="merchant" name="merchant_id">
-                {% for merchant in all_merchants %}
-                    <option value="{{ merchant.id }}">{{ merchant.get_merchant_name() }}</option>
-                {% endfor %}
-            </select>
-        </div>
+            <div>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" min=0 required>
+            </div>
 
-        <div>
-            <label for="category">Category:</label>
-            <select id="category" name="category_id">
-                {% for category in all_categories %}
-                    <option value="{{ category.id }}">{{ category.get_category_name() }}</option>
-                {% endfor %}
-            </select>
-        </div>
+            <input type="submit" value="Add Expense" class="btn">
+        </form>
 
-        <div>
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" min=0 required>
-        </div>
+    </div>
 
-        <input type="submit" value="Add Expense" class="btn">
-    </form>
+    <div class="card">
+        <h2>Add some budget</h2>
 
-</div>
-
-<div class="card">
-    <h2>Add some budget</h2>
-
-    <p>{{balance_alert}}</p>
-    <form action="/budget_mgmt" method="POST">
-        <div>
-            <label for="total_budget">Budget to add:</label>
-            <input type="number" id="total_budget" name="total_budget" min=0>
-        </div>
-        <div>
-            <label for="periodicity">Periodicity:</label>
-            <select name="periodicity">
-                <option value="yearly">Yearly</option>
-                <option value="monthly">Monthly</option>
-                <option value="weekly">Weekly</option>
-            </select>
-        </div>
-        <input type="submit" value="Add Budget" class="btn">
-    </form>
-</div>
+        <p>{{balance_alert}}</p>
+        <form action="/budget_mgmt" method="POST">
+            <div>
+                <label for="total_budget">Budget to add:</label>
+                <input type="number" id="total_budget" name="total_budget" min=0>
+            </div>
+            <div>
+                <label for="periodicity">Periodicity:</label>
+                <select name="periodicity">
+                    <option value="yearly">Yearly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <input type="submit" value="Add Budget" class="btn">
+        </form>
+    </div>
 
 </div>
 {% endblock %}

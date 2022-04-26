@@ -5,14 +5,23 @@
 <form action="categories/new" class="center-in-page">
     <input type="submit" value="Add new category" class="btn"/>
 </form>
-{% for category in categories %}
 
-<section>
-    <p>{{ category.name }}</p>
-    <a href="/categories/{{ category.id }}/edit">Edit</a>
-    <form action="/categories/{{ category.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-</section>
-{% endfor %}
+<div class="table-container">
+    <table class="table">
+        <tr class="table-headings">
+            <th class="table-cell">Category</th>
+        </tr>
+        {% for category in categories %}
+        <tr class="table-row">
+            <td class="table-cell">
+                {{ category.name }}
+            </td>
+            <td class="table-cell"><a href="/categories/{{ category.id }}/edit">Edit</a></td>
+            <td class="table-cell"><form action="/categories/{{ category.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 {% endblock %}

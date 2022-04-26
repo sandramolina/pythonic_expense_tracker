@@ -80,15 +80,16 @@ body {
 a {
 outline: none;
 padding: 2px 1px 0;
+text-decoration: none;
 }
 
 a:link {
-color: #843B62;
+color: white;
 font-weight: bolder;
 }
 
 a:visited {
-color: #843B62;
+color: white;
 }
 
 a:focus {
@@ -207,4 +208,8 @@ color: #ffb997;
 
 .center-in-page {
     text-align: center;
+}
+
+.margin-bottom-zero {
+    margin-bottom: 0;
 }

@@ -215,3 +215,11 @@ color: #ffb997;
 .margin-bottom-zero {
     margin-bottom: 0;
 }
+
+input{
+    font-size: 1.3vw;
+}
+
+select{
+    font-size: 1.3vw;
+}

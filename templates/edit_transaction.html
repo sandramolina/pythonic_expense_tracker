@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="card" id="main">
+<div class="card card-smaller" id="main">
     <h2>Update {{expense.description}}</h2>
 
     <form action="/{{ expense.id }}" method="POST">

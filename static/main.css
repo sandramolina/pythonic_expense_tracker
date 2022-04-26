@@ -73,6 +73,10 @@ body {
     background-color: #ffb997;
 }
 
+.table-smaller {
+    width: 50% !important;
+}
+
 .table-cell {
     padding: 1vw;
 }
@@ -146,6 +150,10 @@ color: #ffb997;
     margin: 2vw;
     background-color: #843b62;
     color: #f5f5f5;
+}
+
+.card-smaller {
+    width: 30% !important;
 }
 
 .card:hover {

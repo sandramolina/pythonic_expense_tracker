@@ -18,7 +18,7 @@
             </select>
             <input type="submit" value="Filter">
         </form>
-        <p>Expenses filtered by Merchant: {{subtotal_expenses_merchant}}</p>
+        <p>Expenses filtered by Merchant: £{{subtotal_expenses_merchant}}</p>
         </div>
         <div class="filter">
             <h3>Filter by Category</h3>
@@ -30,47 +30,48 @@
                 </select>
                 <input type="submit" value="Filter">
             </form>
-            <p>Expenses filtered by Category: {{subtotal_expenses_category}}</p>
+            <p>Expenses filtered by Category: £{{subtotal_expenses_category}}</p>
         </div>
     </div>
 </div>
 
 <h3 class="center-in-page">Detailed Expenses</h3>
+<div class="table-container">
 
-<table class="table">
+    <table class="table">
 
+        <tr class="table-headings">
+            <th class="table-cell">Date</th>
+            <th class="table-cell">Description</th>
+            <th class="table-cell">Merchant</th>
+            <th class="table-cell">Expense Category</th>
+            <th class="table-cell">Amount</th>
+        </tr>
+    {% for expense in expenses %}
+        <tr class="table-row">
+            <td class="table-cell">{{ expense.get_expense_date() }}</td>
+            <td>{{ expense.get_expense_description() }}</td>
+            <td>{{ expense.merchant.get_merchant_name() }}</td>
+            <td>{{ expense.category.get_category_name() }}</td>
+            <td>£{{ expense.get_expense_amount() }}</td>
+            <td>
+                <a href="/{{ expense.id }}/edit">Edit</a>
+            </td>
+            <td>
+                <form action="/{{ expense.id }}/delete" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
     <tr class="table-headings">
-        <th class="table-cell">Date</th>
-        <th class="table-cell">Description</th>
-        <th class="table-cell">Merchant</th>
-        <th class="table-cell">Expense Category</th>
-        <th class="table-cell">Amount</th>
+        <td>Total Expenses</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>£{{ total_expenses }}</td>
     </tr>
-{% for expense in expenses %}
-    <tr class="table-row">
-        <td class="table-cell">{{ expense.get_expense_date() }}</td>
-        <td>{{ expense.get_expense_description() }}</td>
-        <td>{{ expense.merchant.get_merchant_name() }}</td>
-        <td>{{ expense.category.get_category_name() }}</td>
-        <td>{{ expense.get_expense_amount() }}</td>
-        <td>
-            <a href="/{{ expense.id }}/edit">Edit</a>
-        </td>
-        <td>
-            <form action="/{{ expense.id }}/delete" method="POST">
-                <input type="submit" value="Delete">
-            </form>
-        </td>
-    </tr>
-{% endfor %}
-<tr class="table-headings">
-    <td>Total Expenses</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>{{ total_expenses }}</td>
-</tr>
-</table>
+    </table>
 
-
+</div>
 {% endblock %}

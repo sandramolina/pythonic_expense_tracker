@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Categories</h2>
-
+<h2 class="center-in-page">Categories</h2>
+<form action="categories/new" class="center-in-page">
+    <input type="submit" value="Add new category" class="btn"/>
+</form>
 {% for category in categories %}
 
 <section>
@@ -13,5 +15,4 @@
     </form>
 </section>
 {% endfor %}
-<p><a href="categories/new">Add new category</a></p>
 {% endblock %}

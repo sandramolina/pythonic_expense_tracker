@@ -1,5 +1,6 @@
 body {
     margin: 0%;
+    background-color: #ffb997;
 }
 
 .skip-to-content-link {
@@ -17,14 +18,25 @@ body {
     transform: translateY(0%);
     }
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F67E7D;
+}
+
 .nav-links {
     list-style: none;
     color: #F1F7ED;
 }
 
+.link {
+    display: inline;
+    padding: 1vw;
+    color: #F1F7ED !important;
+}
+
 .logo {
-    /* float: left; */
-    width: 30%;
+    width: 35vw;
 }
 
 
@@ -60,3 +72,33 @@ body {
     float: right;
     
 } */
+
+a {
+outline: none;
+text-decoration: none;
+padding: 2px 1px 0;
+}
+
+a:link {
+color: #843B62;
+font-weight: bolder;
+}
+
+a:visited {
+color: #843B62;
+}
+
+a:focus {
+border-bottom: 1px solid;
+background: #ffb997;
+}
+
+a:hover {
+border-bottom: 1px solid;
+background: #ffb997;
+}
+
+a:active {
+background: #843B62;
+color: #ffb997;
+}

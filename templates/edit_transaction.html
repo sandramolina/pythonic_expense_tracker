@@ -1,47 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Update {{expense.description}}</h2>
+<div class="card">
+    <h2>Update {{expense.description}}</h2>
 
-<form action="/{{ expense.id }}" method="POST">
-    <div>
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" value="{{ expense.date }}">
-    </div>
-    
-    <div>
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" value="{{ expense.description }}">
-    </div>
+    <form action="/{{ expense.id }}" method="POST">
+        <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" value="{{ expense.date }}">
+        </div>
+        
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" value="{{ expense.description }}">
+        </div>
 
-    <div>
-        <label for="merchant">Merchant:</label>
-        <select name="merchant_id" id="merchant">
-            {% for merchant in merchants %}
-            <option value="{{ merchant.id }}" {% if merchant.id == expense.merchant.id %} selected {% endif %}>
-                {{ merchant.name }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
+        <div>
+            <label for="merchant">Merchant:</label>
+            <select name="merchant_id" id="merchant">
+                {% for merchant in merchants %}
+                <option value="{{ merchant.id }}" {% if merchant.id == expense.merchant.id %} selected {% endif %}>
+                    {{ merchant.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <div>
-        <label for="category">Category:</label>
-        <select name="category_id" id="category">
-            {% for category in categories %}
-            <option value="{{ category.id }}" {% if category.id == expense.category.id %} selected {% endif %}>
-                {{ category.name }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-    <div>
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" value="{{ expense.amount }}">
-    </div>
-        <input type="submit" value="Update transaction">
-    </div>
-</form>
-
+        <div>
+            <label for="category">Category:</label>
+            <select name="category_id" id="category">
+                {% for category in categories %}
+                <option value="{{ category.id }}" {% if category.id == expense.category.id %} selected {% endif %}>
+                    {{ category.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+        <div>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" value="{{ expense.amount }}">
+        </div>
+            <input type="submit" value="Update transaction" class="btn">
+        </div>
+    </form>
+</div>
 {% endblock %}

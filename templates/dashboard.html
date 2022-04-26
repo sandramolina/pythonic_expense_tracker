@@ -12,6 +12,7 @@
         <h3>Filter by Merchant</h3>
         <form action="/filter_merchant" method="POST">
             <select name="merchant_id">
+                <option value="select-all">--All Merchants--</option>
                 {% for merchant in merchants %}
                 <option value ="{{ merchant.get_merchant_id() }}">{{ merchant.get_merchant_name() }}</option>
                 {% endfor %}
@@ -24,6 +25,7 @@
             <h3>Filter by Category</h3>
             <form action="/filter_category" method="POST">
                 <select name="category_id">
+                    <option value="select-all">--All Categories--</option>
                     {% for category in categories %}
                     <option value ="{{ category.id }}">{{ category.name }}</option>
                     {% endfor %}

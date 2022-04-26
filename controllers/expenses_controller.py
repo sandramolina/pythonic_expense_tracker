@@ -77,17 +77,21 @@ def delete_expense(id):
 
 @expenses_bp.route('/filter_merchant', methods = ['POST'])
 def filter_by_merchant():
-    id = request.form["merchant_id"]
-    merchant = merchant_repository.select(id)
-    expenses = expense_repository.filter_expenses_merchant(merchant)
+    if request.form['merchant_id'] == 'select-all':
+        subtotal_expenses = expense_repository.get_total_expenses()
+        expenses = expense_repository.select_all()
+        merchants = merchant_repository.select_all()
+        categories = category_repository.select_all()  
+        return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = subtotal_expenses, categories = categories, subtotal_expenses_merchant = subtotal_expenses)
     
-    merchants = merchant_repository.select_all()
-    categories = category_repository.select_all()
-
-    total_expenses = expense_repository.get_total_expenses()
-    subtotal_expenses = expense_repository.get_subtotal_expenses_by_merchant(merchant)
-
-    return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = subtotal_expenses, categories = categories, subtotal_expenses_merchant = subtotal_expenses)
+    else:
+        id = request.form["merchant_id"]
+        merchant = merchant_repository.select(id)
+        expenses = expense_repository.filter_expenses_merchant(merchant)
+        subtotal_expenses = expense_repository.get_subtotal_expenses_by_merchant(merchant)    
+        merchants = merchant_repository.select_all()
+        categories = category_repository.select_all()   
+        return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = subtotal_expenses, categories = categories, subtotal_expenses_merchant = subtotal_expenses)
 
 @expenses_bp.route('/filter_category', methods = ['POST'])
 def filter_by_category():

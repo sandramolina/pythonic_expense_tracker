@@ -9,18 +9,27 @@
     <title>Pythonic Expense Tracker</title>
 </head>
 <body>
-    <nav class="navbar">
+    <a class="skip-to-content-link" href="#main">
+        Skip to main content
+    </a>
+    <a class="skip-to-content-link" href="#nav-list">
+        Skip to menu
+    </a>
+    <header>
         <div class="logo">
             <img src="{{ url_for('static', filename='logo.png') }}">
         </div>
-        <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/categories">Categories</a></li>
-                <li><a href="/merchants">Merchants</a></li>
-                <li><a href="/dashboard">Expenses Dashboard</a></li>
-                <!-- <li><a href="/budget_mgmt">Budget Mgmt</a></li> -->
-        </ul>
-    </nav>
+
+        <nav>
+            <ul class="nav-links" id="nav-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/categories">Categories</a></li>
+                    <li><a href="/merchants">Merchants</a></li>
+                    <li><a href="/dashboard">Expenses Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
     {% block content %}
     {% endblock %}
 </body>

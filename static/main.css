@@ -65,6 +65,7 @@ body {
 
 .table {
     border-spacing: 0;
+    border-radius: 19px;
     border: 1vw solid #843b62;
     width: -webkit-fill-available;
     margin: 1rem;

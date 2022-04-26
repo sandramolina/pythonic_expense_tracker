@@ -107,7 +107,7 @@ color: #ffb997;
     margin-top: 1vw;
     font-family: 'Inter', sans-serif;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 1.5vw;
     padding: 6px 10px 6px 10px;
     text-decoration: none;
 }
@@ -143,4 +143,11 @@ color: #ffb997;
 
 .card-container {
     display: flex;
+}
+
+.footer-container {
+    background-color: #0b032d;
+    color: #f5f5f5;
+    font-size: 1vw;
+    padding: 1vw;
 }

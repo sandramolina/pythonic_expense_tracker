@@ -1,17 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Merchants</h2>
+<h2 class="center-in-page">Merchants</h2>
+<form action="merchants/new" class="center-in-page">
+    <input type="submit" value="Add new merchant" class="btn"/>
+</form>
 
-{% for merchant in merchants %}
-
-<section>
-    <p>{{ merchant.name }}</p>
-    <a href="/merchants/{{ merchant.id }}/edit">Edit</a>
-    <form action="/merchants/{{ merchant.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-</section>
-{% endfor %}
-<p><a href="merchants/new">Add new merchant</a></p>
+<div class="table-container">
+    <table class="table">
+        <tr class="table-headings">
+            <th class="table-cell">Merchants</th>
+        </tr>
+        {% for merchant in merchants %}
+        <tr class="table-row">
+            <td class="table-cell">{{ merchant.name }}</td>
+            <td class="table-cell"><a href="/merchants/{{ merchant.id }}/edit">Edit</a></td>
+            <td class="table-cell">
+                <form action="/merchants/{{ merchant.id }}/delete" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 {% endblock %}

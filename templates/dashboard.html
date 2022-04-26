@@ -1,30 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Expenses Dashboard</h2>
+<div class="card dashboard-card">
 
-<h3>Filter by Merchant</h3>
-<form action="/filter_merchant" method="POST">
-    <select name="merchant_id">
-        {% for merchant in merchants %}
-        <option value ="{{ merchant.get_merchant_id() }}">{{ merchant.get_merchant_name() }}</option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="Filter">
-</form>
-<p>Expenses filtered by Merchant: {{subtotal_expenses_merchant}}</p>
+    <h2>Expenses Dashboard</h2>
+    <div class="dashboard-filter">
 
-<h3>Filter by Category</h3>
-<form action="/filter_category" method="POST">
-    <select name="category_id">
-        {% for category in categories %}
-        <option value ="{{ category.id }}">{{ category.name }}</option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="Filter">
-</form>
-<p>Expenses filtered by Category: {{subtotal_expenses_category}}</p>
 
+        <div class="filter">
+        <h3>Filter by Merchant</h3>
+        <form action="/filter_merchant" method="POST">
+            <select name="merchant_id">
+                {% for merchant in merchants %}
+                <option value ="{{ merchant.get_merchant_id() }}">{{ merchant.get_merchant_name() }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Filter">
+        </form>
+        <p>Expenses filtered by Merchant: {{subtotal_expenses_merchant}}</p>
+        </div>
+        <div class="filter">
+            <h3>Filter by Category</h3>
+            <form action="/filter_category" method="POST">
+                <select name="category_id">
+                    {% for category in categories %}
+                    <option value ="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Filter">
+            </form>
+            <p>Expenses filtered by Category: {{subtotal_expenses_category}}</p>
+        </div>
+    </div>
+</div>
 <p><a href="/">Register a new Expense</a></p>
 <h3>Detailed Expenses</h3>
 

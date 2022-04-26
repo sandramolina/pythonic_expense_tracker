@@ -177,3 +177,13 @@ color: #ffb997;
 .dark-font-color {
     color: #0b032d;
 }
+
+.dashboard-card {
+    width: 92%;
+    text-align: center;
+}
+
+.dashboard-filter {
+    display: flex;
+    justify-content: space-around;
+}

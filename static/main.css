@@ -1,6 +1,7 @@
 body {
     margin: 0%;
     background-color: #ffb997;
+    font-family: 'Inter', sans-serif;
 }
 
 .skip-to-content-link {
@@ -22,6 +23,8 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: #F67E7D;
+    align-items: center;
+    font-size: larger;
 }
 
 .nav-links {
@@ -37,6 +40,7 @@ body {
 
 .logo {
     width: 35vw;
+    padding-top: 1vw;
 }
 
 
@@ -75,7 +79,6 @@ body {
 
 a {
 outline: none;
-text-decoration: none;
 padding: 2px 1px 0;
 }
 
@@ -102,3 +105,30 @@ a:active {
 background: #843B62;
 color: #ffb997;
 }
+
+.btn {
+    background: #0b032d;
+    background-image: -webkit-linear-gradient(top, #0b032d, #35286e);
+    background-image: -moz-linear-gradient(top, #0b032d, #35286e);
+    background-image: -ms-linear-gradient(top, #0b032d, #35286e);
+    background-image: -o-linear-gradient(top, #0b032d, #35286e);
+    background-image: linear-gradient(to bottom, #0b032d, #35286e);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 6px 10px 6px 10px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #f67d7d;
+    background-image: -webkit-linear-gradient(top, #f67d7d, #ffba97);
+    background-image: -moz-linear-gradient(top, #f67d7d, #ffba97);
+    background-image: -ms-linear-gradient(top, #f67d7d, #ffba97);
+    background-image: -o-linear-gradient(top, #f67d7d, #ffba97);
+    background-image: linear-gradient(to bottom, #f67d7d, #ffba97);
+    text-decoration: none;
+  }

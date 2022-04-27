@@ -38,23 +38,32 @@ merchant_repository.save(merchant3)
 merchant4 = Merchant("Kraznys mo Nakloz")
 merchant_repository.save(merchant4)
 
+merchant5 = Merchant("Dragonstone Beauty")
+merchant_repository.save(merchant5)
+
 expense1 = Expense("2022-04-25", merchant1, category1, 120, "Dinner with Khal Drogo")
 expense_repository.save(expense1)
 
-expense2 = Expense("2020-03-15", merchant3, category2, 49.9, "Wedding at the Twins")
+expense2 = Expense("2020-03-15", merchant3, category2, 49, "Wedding at the Twins")
 expense_repository.save(expense2)
 
 expense3 = Expense("2021-01-05", merchant4, category5, 2000, "Getting some new warriors")
 expense_repository.save(expense3)
 
-expense4 = Expense("2022-02-28", merchant2, category4, 50000.63, "Golden helmet")
+expense4 = Expense("2022-02-28", merchant2, category4, 50000, "Golden helmet")
 expense_repository.save(expense4)
 
 expense5 = Expense("2021-02-28", merchant2, category3, 20000, "Present for Jon Snow (Longclaw)")
 expense_repository.save(expense5)
 
-expense6 = Expense("2021-02-25", merchant4, category5, 100.50, "1 bottle of Tears of Lys")
+expense6 = Expense("2021-02-25", merchant4, category5, 100, "1 bottle of Tears of Lys")
 expense_repository.save(expense6)
+
+expense7 = Expense("2021-05-25", merchant1, category1, 80, "Pet food for Viserion")
+expense_repository.save(expense7)
+
+expense8 = Expense("2021-06-25", merchant5, category1, 75, "Silver hair dye")
+expense_repository.save(expense8)
 
 budget = Budget(100000, "Yearly")
 budget_repository.save(budget)

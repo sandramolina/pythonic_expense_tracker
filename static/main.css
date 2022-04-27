@@ -81,6 +81,16 @@ body {
     padding: 1vw;
 }
 
+.edit-delete-table1 {
+    border: #843B62;
+    background-color: #ffb997;
+}
+
+.edit-delete-table1 {
+    border: #ffb997;
+    background-color: #843B62;
+}
+
 /* LINKS STYLING */
 a {
 outline: none;
@@ -227,9 +237,34 @@ color: #ffb997;
 input{
     font-size: 1.3vw;
     color: #0b032d;
+    font-family: 'Inter', sans-serif;
+    margin: 1%;
 }
 
 select{
     font-size: 1.3vw;
     color: #0b032d;
+    font-family: 'Inter', sans-serif;
+    margin: 0.5%;
 }
+
+textarea {
+    font-size: 1.3vw;
+    color: #0b032d;
+    font-family: 'Inter', sans-serif;
+}
+
+input[type=number], input[type=date] {
+    width: 67%;
+}
+
+.select-card {
+    width: 69%;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    width: 17%;
+  }
+

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="title center-in-page"> Welcome to the Pythonic Expense Tracker</h2>
+<!-- <h2 class="title center-in-page"> Welcome to the Pythonic Expense Tracker</h2> -->
 
 <div class="card-container">
     <div class="card">
@@ -15,7 +15,7 @@
 
             <div>
                 <label for="merchant">Merchant:</label>
-                <select id="merchant" name="merchant_id">
+                <select id="merchant" name="merchant_id" class="select-card">
                     {% for merchant in all_merchants %}
                         <option value="{{ merchant.id }}">{{ merchant.get_merchant_name() }}</option>
                     {% endfor %}
@@ -24,7 +24,7 @@
 
             <div>
                 <label for="category">Category:</label>
-                <select id="category" name="category_id">
+                <select id="category" name="category_id" class="select-card">
                     {% for category in all_categories %}
                         <option value="{{ category.id }}">{{ category.get_category_name() }}</option>
                     {% endfor %}
@@ -38,7 +38,7 @@
 
             <div>
                 <label for="description">Description:</label>
-                <textarea rows="4" cols="50" type="text" id="description" name="description" placeholder="i.e Dinner with John Snow" required></textarea>
+                <textarea rows="2" cols="50" type="text" id="description" name="description" placeholder="e.g. Dinner with Jon Snow" required></textarea>
             </div>
 
             <input type="submit" value="Add Expense" class="btn">
@@ -57,7 +57,7 @@
             </div>
             <div>
                 <label for="periodicity">Periodicity:</label>
-                <select name="periodicity">
+                <select name="periodicity" class="select-card">
                     <option value="yearly">Yearly</option>
                     <option value="monthly">Monthly</option>
                     <option value="weekly">Weekly</option>

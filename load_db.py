@@ -50,7 +50,7 @@ expense_repository.save(expense3)
 expense4 = Expense("2022-02-28", merchant2, category4, 50000.63, "Golden helmet")
 expense_repository.save(expense4)
 
-expense5 = Expense("2021-02-28", merchant2, category3, 20000, "Present for John S. (Longclaw)")
+expense5 = Expense("2021-02-28", merchant2, category3, 20000, "Present for Jon Snow (Longclaw)")
 expense_repository.save(expense5)
 
 expense6 = Expense("2021-02-25", merchant4, category5, 100.50, "1 bottle of Tears of Lys")

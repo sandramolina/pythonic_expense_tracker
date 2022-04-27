@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 id="main">Update {{ name }} Category</h2>
+<h2 id="main" class="title mleft">Update {{ name }} Category</h2>
 
-<form action="/categories/{{ category.id }}" method="POST">
+<form action="/categories/{{ category.id }}" method="POST" class="title mleft">
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="{{ category.name }}">

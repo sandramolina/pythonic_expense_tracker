@@ -15,9 +15,9 @@
                 <option value="select-all">--All Merchants--</option>
                 {% for merchant in merchants %}
                     <option value="{{ merchant.get_merchant_id() }}" 
-                    {% if selected_id == merchant.get_merchant_id() %} 
-                        selected 
-                    {% endif %}>
+                        {% if selected_id == merchant.get_merchant_id() %} 
+                            selected 
+                        {% endif %}>
                         {{ merchant.get_merchant_name() }}
                     </option>
                 {% endfor %}
@@ -27,16 +27,20 @@
         </div>
         <div class="filter">
             <h3>Filter by Category</h3>
-            <form action="/filter_category" method="POST">
+            <form action="/filter_category" method="POST" class="filter-form">
                 <select name="category_id">
                     <option value="select-all">--All Categories--</option>
                     {% for category in categories %}
-                    <option value ="{{ category.id }}">{{ category.name }}</option>
+                    <option value ="{{ category.id }}"
+                        {% if selected_id == category.id %} 
+                            selected 
+                        {% endif %}>
+                        {{ category.name }}
+                    </option>
                     {% endfor %}
                 </select>
                 <input type="submit" value="Filter" class="filter-btn">
             </form>
-            <p>Expenses filtered by Category: £{{subtotal_expenses_category}}</p>
         </div>
     </div>
 </div>

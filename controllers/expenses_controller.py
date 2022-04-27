@@ -104,6 +104,7 @@ def filter_by_category():
         return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = total_expenses, categories = categories, subtotal_expenses_category = total_expenses)
     else:
         id = request.form["category_id"]
+        selected_id = int(id)
         category = category_repository.select(id)
         expenses = expense_repository.filter_expenses_category(category)
 
@@ -112,7 +113,7 @@ def filter_by_category():
         
         subtotal_expenses = expense_repository.get_subtotal_expenses_by_category(category)
 
-        return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = subtotal_expenses, categories = categories, subtotal_expenses_category = subtotal_expenses)
+        return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = subtotal_expenses, categories = categories, subtotal_expenses_category = subtotal_expenses, selected_id = selected_id)
 
 @expenses_bp.route('/budget_mgmt', methods = ['POST'])
 def add_budget():

@@ -17,7 +17,7 @@
                 <option value ="{{ merchant.get_merchant_id() }}">{{ merchant.get_merchant_name() }}</option>
                 {% endfor %}
             </select>
-            <input type="submit" value="Filter">
+            <input type="submit" value="Filter" class="filter-btn">
         </form>
         <p>Expenses filtered by Merchant: £{{subtotal_expenses_merchant}}</p>
         </div>
@@ -30,7 +30,7 @@
                     <option value ="{{ category.id }}">{{ category.name }}</option>
                     {% endfor %}
                 </select>
-                <input type="submit" value="Filter">
+                <input type="submit" value="Filter" class="filter-btn">
             </form>
             <p>Expenses filtered by Category: £{{subtotal_expenses_category}}</p>
         </div>
@@ -57,11 +57,11 @@
             <td>{{ expense.category.get_category_name() }}</td>
             <td>£{{ expense.get_expense_amount() }}</td>
             <td>
-                <a href="/{{ expense.id }}/edit">Edit</a>
+                <a href="/{{ expense.id }}/edit" class="edit-delete-table1">Edit</a>
             </td>
             <td>
                 <form action="/{{ expense.id }}/delete" method="POST">
-                    <input type="submit" value="Delete">
+                    <input type="submit" value="Delete" class="edit-delete-table1">
                 </form>
             </td>
         </tr>

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="center-in-page" id="main">Merchants</h2>
-<form action="merchants/new" class="center-in-page">
-    <input type="submit" value="Add new merchant" class="btn"/>
+<h2 class="title mleft" id="main">Merchants</h2>
+<form action="merchants/new">
+    <input type="submit" value="Add new merchant" class="btn mleft"/>
 </form>
 
 <div class="table-container">
@@ -14,10 +14,10 @@
         {% for merchant in merchants %}
         <tr class="table-row">
             <td class="table-cell">{{ merchant.name }}</td>
-            <td class="table-cell"><a href="/merchants/{{ merchant.id }}/edit">Edit</a></td>
+            <td class="table-cell"><a href="/merchants/{{ merchant.id }}/edit" class="edit-delete-table1">Edit</a></td>
             <td class="table-cell">
                 <form action="/merchants/{{ merchant.id }}/delete" method="POST">
-                    <input type="submit" value="Delete">
+                    <input type="submit" value="Delete" class="edit-delete-table1">
                 </form>
             </td>
         </tr>

@@ -16,7 +16,7 @@ def expenses():
     merchants = merchant_repository.select_all()
     total_expenses = expense_repository.get_total_expenses()  
     categories = category_repository.select_all()
-    return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses, merchants = merchants, categories = categories, subtotal_expenses_merchant = 0, subtotal_expenses_category = 0)
+    return render_template('dashboard.html', expenses = expenses, total_expenses = total_expenses, merchants = merchants, categories = categories, subtotal_expenses_merchant = 0, subtotal_expenses_category = 0, selected_id = None)
 
 @expenses_bp.route('/')
 def new_expense():
@@ -51,7 +51,7 @@ def render_edit_page(id):
     all_merchants = merchant_repository.select_all()
     all_categories = category_repository.select_all()
 
-    return render_template('/edit_transaction.html', expense = expense, merchants = all_merchants, categories = all_categories)
+    return render_template('/edit_transaction.html', expense = expense, merchants = all_merchants, categories = all_categories, selected_id = None)
 
 @expenses_bp.route('/<id>', methods=["POST"])
 def update_expense(id):
@@ -82,16 +82,17 @@ def filter_by_merchant():
         expenses = expense_repository.select_all()
         merchants = merchant_repository.select_all()
         categories = category_repository.select_all()  
-        return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = subtotal_expenses, categories = categories, subtotal_expenses_merchant = subtotal_expenses)
+        return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = subtotal_expenses, categories = categories, subtotal_expenses_merchant = subtotal_expenses, selected_id = None)
     
     else:
         id = request.form["merchant_id"]
+        selected_id = int(id)
         merchant = merchant_repository.select(id)
         expenses = expense_repository.filter_expenses_merchant(merchant)
         subtotal_expenses = expense_repository.get_subtotal_expenses_by_merchant(merchant)    
         merchants = merchant_repository.select_all()
         categories = category_repository.select_all()   
-        return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = subtotal_expenses, categories = categories, subtotal_expenses_merchant = subtotal_expenses)
+        return render_template('dashboard.html', expenses = expenses, merchants = merchants, total_expenses = subtotal_expenses, categories = categories, subtotal_expenses_merchant = subtotal_expenses, selected_id = selected_id)
 
 @expenses_bp.route('/filter_category', methods = ['POST'])
 def filter_by_category():

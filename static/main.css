@@ -292,3 +292,6 @@ label {
     width: 17%;
 }
 
+.filter-form {
+    display: flex;
+}

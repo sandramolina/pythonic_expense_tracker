@@ -10,16 +10,20 @@
     <div class="dashboard-filter">
         <div class="filter">
         <h3>Filter by Merchant</h3>
-        <form action="/filter_merchant" method="POST">
+        <form action="/filter_merchant" method="POST" class="filter-form">
             <select name="merchant_id">
                 <option value="select-all">--All Merchants--</option>
                 {% for merchant in merchants %}
-                <option value ="{{ merchant.get_merchant_id() }}">{{ merchant.get_merchant_name() }}</option>
+                    <option value="{{ merchant.get_merchant_id() }}" 
+                    {% if selected_id == merchant.get_merchant_id() %} 
+                        selected 
+                    {% endif %}>
+                        {{ merchant.get_merchant_name() }}
+                    </option>
                 {% endfor %}
             </select>
             <input type="submit" value="Filter" class="filter-btn">
         </form>
-        <p>Expenses filtered by Merchant: £{{subtotal_expenses_merchant}}</p>
         </div>
         <div class="filter">
             <h3>Filter by Category</h3>

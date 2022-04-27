@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 id="main">Update {{ name }} Merchant</h2>
+<h2 id="main" class="title mleft">Update {{ name }} Merchant</h2>
 
-<form action="/merchants/{{ merchant.id }}" method="POST">
+<form action="/merchants/{{ merchant.id }}" method="POST" class="title mleft">
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="{{ merchant.name }}">

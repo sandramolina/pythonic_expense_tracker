@@ -59,7 +59,7 @@ def get_total_expenses():
     total_expenses = 0
 
     for expense in all_expenses:
-        total_expenses += int(expense['amount'])
+        total_expenses += float(expense['amount'])
     
     return total_expenses
 
@@ -104,7 +104,7 @@ def get_subtotal_expenses_by_merchant(merchant):
     expenses_by_merchant = run_sql(sql, values)
 
     for expense in expenses_by_merchant:
-        subtotal_expenses_by_merchant += int(expense['amount'])
+        subtotal_expenses_by_merchant += float(expense['amount'])
     
     return subtotal_expenses_by_merchant
 
@@ -117,6 +117,6 @@ def get_subtotal_expenses_by_category(category):
     expenses_by_category = run_sql(sql, values)
 
     for expense in expenses_by_category:
-        subtotal_expenses_by_category += int(expense['amount'])
+        subtotal_expenses_by_category += float(expense['amount'])
     
     return subtotal_expenses_by_category

@@ -50,7 +50,7 @@ def alert():
 
     total_budget = 0
     for budget in all_budgets:
-        total_budget += int(budget['total_budget'])
+        total_budget += float(budget['total_budget'])
     
     balance = 0
     total_expenses = expense_repository.get_total_expenses()

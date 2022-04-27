@@ -18,7 +18,7 @@ CREATE TABLE expenses (
     date VARCHAR(255),
     merchant_id INT REFERENCES merchants(id),
     category_id INT REFERENCES categories(id),
-    amount INT,
+    amount FLOAT,
     description VARCHAR(255)
 );
 

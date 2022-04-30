@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="-nJwM8MVXj22u1nWOoSV" name="classes">
-        <mxGraphModel dx="514" dy="288" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1476" dy="647" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -126,6 +126,70 @@
                 </mxCell>
                 <mxCell id="_Ejc1K2TufFADuH3jcwU-1" value="&lt;div&gt;&lt;span&gt;id : int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;total_budget: int&lt;/div&gt;&lt;div&gt;periodicity: str&lt;/div&gt;&lt;div&gt;remaining_budget&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="PZSBiwO2wmRF0Z8gL386-1" vertex="1">
                     <mxGeometry x="96" y="448" width="140" height="56" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="05K9OD4wvNnB7F7ho0XN" name="User SiteMap">
+        <mxGraphModel dx="148" dy="77" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-0"/>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-1" parent="D7R7nIbkxO_y1t6A_XM3-0"/>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-12" style="edgeStyle=none;html=1;fontColor=#000000;endArrow=none;endFill=0;startSize=1;strokeColor=default;" edge="1" parent="D7R7nIbkxO_y1t6A_XM3-1" source="D7R7nIbkxO_y1t6A_XM3-2">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="400" y="119.38646718618034" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-2" value="Homepage" style="whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;rounded=1;" vertex="1" parent="D7R7nIbkxO_y1t6A_XM3-1">
+                    <mxGeometry x="340" y="50" width="120" height="48" as="geometry"/>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-16" style="edgeStyle=none;html=1;exitX=0.066;exitY=1.001;exitDx=0;exitDy=0;fontColor=#000000;endArrow=none;endFill=0;startSize=1;strokeColor=default;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="D7R7nIbkxO_y1t6A_XM3-1" source="D7R7nIbkxO_y1t6A_XM3-3" target="D7R7nIbkxO_y1t6A_XM3-13">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="246.1111111111111" y="203.29647148980035" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="251" y="202"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-3" value="Categories" style="whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;rounded=1;fontColor=#000000;" vertex="1" parent="D7R7nIbkxO_y1t6A_XM3-1">
+                    <mxGeometry x="246" y="129" width="94" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-11" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontColor=#000000;endArrow=none;endFill=0;startSize=1;strokeColor=default;" edge="1" parent="D7R7nIbkxO_y1t6A_XM3-1" source="D7R7nIbkxO_y1t6A_XM3-4">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="400.06306306306305" y="118.80587438634925" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-4" value="Merchants" style="whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;rounded=1;fontColor=#000000;" vertex="1" parent="D7R7nIbkxO_y1t6A_XM3-1">
+                    <mxGeometry x="353" y="129" width="94" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-9" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontColor=#000000;endArrow=none;endFill=0;strokeColor=default;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="D7R7nIbkxO_y1t6A_XM3-1" source="D7R7nIbkxO_y1t6A_XM3-5" target="D7R7nIbkxO_y1t6A_XM3-3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="290" y="119" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="507" y="118"/>
+                            <mxPoint x="406" y="119"/>
+                            <mxPoint x="389" y="119"/>
+                            <mxPoint x="293" y="119"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-5" value="Expenses Dashboard" style="whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;rounded=1;fontColor=#000000;" vertex="1" parent="D7R7nIbkxO_y1t6A_XM3-1">
+                    <mxGeometry x="460" y="129" width="94" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-13" value="Add new category" style="whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;rounded=1;fontColor=#000000;" vertex="1" parent="D7R7nIbkxO_y1t6A_XM3-1">
+                    <mxGeometry x="259" y="182" width="94" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-14" value="Add new merchant" style="whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;rounded=1;fontColor=#000000;" vertex="1" parent="D7R7nIbkxO_y1t6A_XM3-1">
+                    <mxGeometry x="366" y="182" width="94" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="D7R7nIbkxO_y1t6A_XM3-17" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;fontColor=#000000;endArrow=none;endFill=0;startSize=1;strokeColor=default;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="D7R7nIbkxO_y1t6A_XM3-1" target="D7R7nIbkxO_y1t6A_XM3-14">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="363" y="202" as="targetPoint"/>
+                        <mxPoint x="356" y="168" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="356" y="202"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>

@@ -131,7 +131,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="05K9OD4wvNnB7F7ho0XN" name="User SiteMap">
-        <mxGraphModel dx="504" dy="264" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="649" dy="358" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="D7R7nIbkxO_y1t6A_XM3-0"/>
                 <mxCell id="D7R7nIbkxO_y1t6A_XM3-1" parent="D7R7nIbkxO_y1t6A_XM3-0"/>
@@ -195,7 +195,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="oU89TY_Ex1HitS_1OXKU" name="User Case Diagram">
-        <mxGraphModel dx="706" dy="370" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="909" dy="502" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="mqsxOJFA4_cUAtbovzno-0"/>
                 <mxCell id="mqsxOJFA4_cUAtbovzno-1" parent="mqsxOJFA4_cUAtbovzno-0"/>
